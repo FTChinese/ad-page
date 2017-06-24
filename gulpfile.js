@@ -8,6 +8,7 @@ const rollup = require('rollup').rollup;
 const babel = require('rollup-plugin-babel');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const del = require('del');
+const bowerResolve = require('rollup-plugin-bower-resolve');//NOTE:此插件决定了js能否顺利import bower中的模块的js
 
 var cache;
 const env = new nunjucks.Environment(
@@ -51,13 +52,17 @@ gulp.task('script',() => {
      entry:'client/js/main.js',
      cache: cache,
      plugins:[
+       bowerResolve({
+         module: true
+       }),,
        babel({//这里需要配置文件.babelrc
          exclude:'node_modules/**'
        }),
        nodeResolve({
-         jsnext:true,
+         jsnext:true
        })
      ]
+     //external:['o-toggle','o-utils']
    }).then(function(bundle) {
      cache = bundle;//Cache for later use
      return bundle.write({//返回promise，以便下一步then()
@@ -65,7 +70,7 @@ gulp.task('script',() => {
        dest: '.tmp/scripts/main.js',
        format: 'iife',
        sourceMap: true,
-       moduleName:'getGaData'
+       moduleName:'ad-template'
        
      });
    }).then(() => {

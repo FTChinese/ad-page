@@ -1,2 +1,13 @@
+
+@import "o-colors/main";
+@include oColorsSetColor('grey-tint5', #333333);
+@include oColorsSetColor('teal-1', #26747a);
+@include oColorsSetColor('grey-tint1', #b0b0b0);
+@include oColorsSetColor('pink-tint1',  #f7e9d9);
+@include oColorsSetColor('grey-tint4',  #505050);
+
+$o-header-is-silent: false;
+@import 'o-header/main';
+
 $o-footer-is-silent: false;
 @import "ftc-footer/main";

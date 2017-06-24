@@ -1,0 +1,23 @@
+{
+  "name": "ad-template",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Wang Yichen"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/FTChinese/ad-template",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "o-colors": "^4.0.2",
+    "o-grid": "^4.3.3",
+    "ftc-footer": "^0.2.1",
+    "o-header": "^7.0.1"
+  }
+}

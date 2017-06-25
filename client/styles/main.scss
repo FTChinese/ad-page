@@ -11,3 +11,9 @@ $o-header-is-silent: false;
 
 $o-footer-is-silent: false;
 @import "ftc-footer/main";
+
+
+@import 'o-video/main';
+
+
+body { background-color: oColorsGetColorFor(page,background); }
